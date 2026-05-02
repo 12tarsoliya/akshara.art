@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Upload } from 'lucide-react';
+import { addPainting } from '../data/paintings';
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
@@ -8,13 +9,15 @@ const AdminDashboard = () => {
     price: '',
     medium: '',
     dimensions: '',
-    description: ''
+    description: '',
+    image: 'https://images.unsplash.com/photo-1578301978693-85fa9c03fa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' // default placeholder
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Painting uploaded successfully! (Mock Action)');
-    setFormData({ title: '', price: '', medium: '', dimensions: '', description: '' });
+    addPainting(formData);
+    alert('Painting published to the gallery successfully!');
+    setFormData({ title: '', price: '', medium: '', dimensions: '', description: '', image: 'https://images.unsplash.com/photo-1578301978693-85fa9c03fa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' });
   };
 
   return (
@@ -31,8 +34,18 @@ const AdminDashboard = () => {
           <form className="upload-form" onSubmit={handleSubmit}>
             <div className="image-upload-area">
               <Upload size={40} className="upload-icon" />
-              <p>Drag and drop high-res image here, or click to browse</p>
-              <button type="button" className="btn-outline">Select File</button>
+              <p>For this demo, provide an image URL below instead of uploading</p>
+            </div>
+
+            <div className="form-group">
+              <label>Image URL</label>
+              <input 
+                type="text" 
+                required 
+                value={formData.image}
+                onChange={e => setFormData({...formData, image: e.target.value})}
+                placeholder="https://..."
+              />
             </div>
 
             <div className="form-group">

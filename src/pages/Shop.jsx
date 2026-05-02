@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PaintingCard from '../components/PaintingCard';
-import { paintings } from '../data/paintings';
+import { getPaintings } from '../data/paintings';
 import './Shop.css';
 
 const Shop = () => {
+  const [paintings, setPaintings] = useState([]);
+
+  useEffect(() => {
+    setPaintings(getPaintings());
+  }, []);
+
   return (
     <div className="shop-container container">
       <div className="shop-header">

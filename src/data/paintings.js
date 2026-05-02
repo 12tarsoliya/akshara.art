@@ -1,4 +1,4 @@
-export const paintings = [
+export const initialPaintings = [
   {
     id: 1,
     title: "Ethereal Bloom",
@@ -60,3 +60,25 @@ export const paintings = [
     description: "Geometric shapes and contrasting colors reflect the vibrancy of city life."
   }
 ];
+
+export const getPaintings = () => {
+  const saved = localStorage.getItem('akshara_paintings');
+  if (saved) {
+    return JSON.parse(saved);
+  }
+  localStorage.setItem('akshara_paintings', JSON.stringify(initialPaintings));
+  return initialPaintings;
+};
+
+export const addPainting = (painting) => {
+  const currentPaintings = getPaintings();
+  const newPainting = {
+    ...painting,
+    id: Date.now(),
+    artist: "Akshara",
+    price: parseFloat(painting.price)
+  };
+  const updatedPaintings = [newPainting, ...currentPaintings];
+  localStorage.setItem('akshara_paintings', JSON.stringify(updatedPaintings));
+  return updatedPaintings;
+};
