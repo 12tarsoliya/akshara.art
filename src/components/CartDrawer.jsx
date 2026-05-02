@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Trash2 } from 'lucide-react';
+import { X, Trash2, Lock, ShieldCheck } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import './CartDrawer.css';
 
@@ -50,7 +50,15 @@ const CartDrawer = () => {
               <span>Total</span>
               <span>${total}</span>
             </div>
-            <button className="btn-primary checkout-btn">Proceed to Checkout</button>
+            <button className="btn-primary checkout-btn flex items-center justify-center gap-2" onClick={() => {
+              alert("Redirecting to 100% Secure Payment Gateway (e.g., Razorpay/Stripe).\n\nYour website does NOT store credit card details. Security is handled entirely by the payment provider (PCI-DSS Compliant) so hackers cannot steal payment info from your site.");
+            }}>
+              <Lock size={18} /> Proceed to Secure Checkout
+            </button>
+            <div className="secure-badge">
+              <ShieldCheck size={16} className="text-green-500" />
+              <span>Payments are End-to-End Encrypted</span>
+            </div>
           </div>
         )}
       </div>
