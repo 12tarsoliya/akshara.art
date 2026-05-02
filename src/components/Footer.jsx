@@ -10,7 +10,8 @@ const Footer = () => {
           <p>Where Emotion Meets Canvas.</p>
         </div>
         <div className="footer-links">
-          <p>© {new Date().getFullYear()} Akshara Art. All rights reserved.</p>
+          <p>Handcrafted with ❤️ by Apoorva Tarsoliya</p>
+          <p style={{ marginTop: '0.5rem', opacity: 0.6, fontSize: '0.8rem' }}>100% Custom Coded • No Templates Used</p>
         </div>
       </div>
     </footer>

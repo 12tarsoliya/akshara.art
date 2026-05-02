@@ -36,7 +36,8 @@ const Home = () => {
         <div className="about-grid">
           <div className="about-text">
             <h2>The Vision</h2>
-            <p>Every stroke is a word, every color a sentence. Akshara brings forth the unspoken emotions through a blend of contemporary and abstract forms. This gallery is a testament to the journey of finding beauty in the abstract.</p>
+            <p>Every stroke is a word, every color a sentence. Akshara brings forth the unspoken emotions through a blend of contemporary and abstract forms. </p>
+            <p style={{ marginTop: '1rem' }}>This entire gallery is <strong>100% custom-coded from scratch</strong>, steering clear of generic templates to ensure the digital canvas is as unique as the physical art it holds.</p>
           </div>
           <div className="stats-grid">
             <div className="stat-card glass-panel">
