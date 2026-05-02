@@ -1,0 +1,42 @@
+.shop-container {
+  padding-top: calc(var(--nav-height) + 4rem);
+  padding-bottom: 6rem;
+  min-height: 100vh;
+}
+
+.shop-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeIn var(--transition-slow) forwards;
+}
+
+.shop-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.shop-description {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.masonry-grid {
+  column-count: 3;
+  column-gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+    column-count: 1;
+  }
+  
+  .shop-title {
+    font-size: 2.5rem;
+  }
+}
