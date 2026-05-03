@@ -1,5 +1,5 @@
 .shop-container {
-  padding-top: calc(var(--nav-height) + 8rem);
+  padding-top: calc(var(--nav-height) + 12rem);
   padding-bottom: 6rem;
   min-height: 100vh;
 }

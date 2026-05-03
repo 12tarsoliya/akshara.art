@@ -5,7 +5,7 @@ export const initialPaintings = [
     artist: "Akshara",
     price: 450,
     dimensions: "24 x 36 inches",
-    medium: "Oil on Canvas",
+    medium: "Oil on Hand-painted Board",
     image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "A mesmerizing exploration of color and form, capturing the essence of a blooming flower at twilight."
   },
@@ -15,7 +15,7 @@ export const initialPaintings = [
     artist: "Akshara",
     price: 600,
     dimensions: "30 x 40 inches",
-    medium: "Acrylic on Canvas",
+    medium: "Acrylic on Handmade Paper",
     image: "https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Deep, moody blues and vibrant gold accents create a rhythmic composition inspired by the night sky."
   },
@@ -35,7 +35,7 @@ export const initialPaintings = [
     artist: "Akshara",
     price: 800,
     dimensions: "40 x 40 inches",
-    medium: "Oil on Canvas",
+    medium: "Oil on Hand-painted Board",
     image: "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Bold strokes and dynamic color palettes come together in this energetic piece."
   },
@@ -62,11 +62,11 @@ export const initialPaintings = [
 ];
 
 export const getPaintings = () => {
-  const saved = localStorage.getItem('akshara_paintings');
+  const saved = localStorage.getItem('akshara_paintings_v2');
   if (saved) {
     return JSON.parse(saved);
   }
-  localStorage.setItem('akshara_paintings', JSON.stringify(initialPaintings));
+  localStorage.setItem('akshara_paintings_v2', JSON.stringify(initialPaintings));
   return initialPaintings;
 };
 
@@ -79,6 +79,6 @@ export const addPainting = (painting) => {
     price: parseFloat(painting.price)
   };
   const updatedPaintings = [newPainting, ...currentPaintings];
-  localStorage.setItem('akshara_paintings', JSON.stringify(updatedPaintings));
+  localStorage.setItem('akshara_paintings_v2', JSON.stringify(updatedPaintings));
   return updatedPaintings;
 };
