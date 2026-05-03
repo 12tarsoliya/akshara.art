@@ -1,18 +1,19 @@
 .shop-container {
-  padding-top: calc(var(--nav-height) + 12rem);
+  padding-top: calc(var(--nav-height) + 2rem);
   padding-bottom: 6rem;
   min-height: 100vh;
 }
 
 .shop-header {
   text-align: center;
+  margin-top: 4rem;
   margin-bottom: 4rem;
   animation: fadeIn var(--transition-slow) forwards;
 }
 
 .shop-title {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .shop-description {
