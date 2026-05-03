@@ -10,8 +10,8 @@ const Footer = () => {
           <p>Where Emotion Meets Canvas.</p>
         </div>
         <div className="footer-links">
-          <p>Handcrafted with ❤️ by Akshara</p>
-          <p style={{ marginTop: '0.5rem', opacity: 0.6, fontSize: '0.8rem' }}>100% Custom Coded • No Templates Used</p>
+          <p>Designed & Engineered by <span className="text-accent">Antigravity Studios</span></p>
+          <p style={{ marginTop: '0.5rem', opacity: 0.6, fontSize: '0.8rem' }}>Custom built exclusively for Akshara Tarsoliya</p>
         </div>
       </div>
     </footer>
