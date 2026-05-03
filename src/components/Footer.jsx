@@ -10,7 +10,7 @@ const Footer = () => {
           <p>Where Emotion Meets Canvas.</p>
         </div>
         <div className="footer-links">
-          <p>Handcrafted with ❤️ by Apoorva Tarsoliya</p>
+          <p>Handcrafted with ❤️ by Akshara</p>
           <p style={{ marginTop: '0.5rem', opacity: 0.6, fontSize: '0.8rem' }}>100% Custom Coded • No Templates Used</p>
         </div>
       </div>
