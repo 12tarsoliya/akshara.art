@@ -14,7 +14,7 @@ export const addPainting = (painting) => {
   const newPainting = {
     ...painting,
     id: Date.now(),
-    artist: "Akshara",
+    artist: "Akshara Tarsoliya",
     price: parseFloat(painting.price)
   };
   const updatedPaintings = [newPainting, ...currentPaintings];

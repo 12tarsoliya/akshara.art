@@ -6,11 +6,11 @@ const Footer = () => {
     <footer className="footer border-t border-glass">
       <div className="container footer-content">
         <div className="footer-brand">
-          <h3>Akshara<span className="text-accent">.</span></h3>
+          <h3>Akshara Tarsoliya<span className="text-accent">.</span></h3>
           <p>Where Emotion Meets Art.</p>
         </div>
         <div className="footer-links">
-          <p>© {new Date().getFullYear()} Akshara Art. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Akshara Tarsoliya Art. All rights reserved.</p>
           <p style={{ marginTop: '0.5rem', opacity: 0.6, fontSize: '0.8rem' }}>Custom built exclusively for Akshara Tarsoliya</p>
         </div>
       </div>

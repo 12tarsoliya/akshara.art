@@ -26,7 +26,7 @@ const Navbar = () => {
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <Link to="/" className="brand">
-          Akshara<span className="text-accent">.</span>
+          Akshara Tarsoliya<span className="text-accent">.</span>
         </Link>
 
         <nav className={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>
