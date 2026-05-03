@@ -13,6 +13,17 @@ const AdminDashboard = () => {
     image: 'https://images.unsplash.com/photo-1578301978693-85fa9c03fa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' // default placeholder
   });
 
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData({ ...formData, image: reader.result });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     addPainting(formData);
@@ -34,18 +45,16 @@ const AdminDashboard = () => {
           <form className="upload-form" onSubmit={handleSubmit}>
             <div className="image-upload-area">
               <Upload size={40} className="upload-icon" />
-              <p>For this demo, provide an image URL below instead of uploading</p>
-            </div>
-
-            <div className="form-group">
-              <label>Image URL</label>
+              <p>Click below to upload your painting photo</p>
               <input 
-                type="text" 
-                required 
-                value={formData.image}
-                onChange={e => setFormData({...formData, image: e.target.value})}
-                placeholder="https://..."
+                type="file" 
+                accept="image/*" 
+                onChange={handleImageUpload}
+                className="file-input"
               />
+              {formData.image && formData.image !== 'https://images.unsplash.com/photo-1578301978693-85fa9c03fa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' && (
+                <p style={{ color: '#22c55e', marginTop: '0.5rem' }}>Image Selected Successfully!</p>
+              )}
             </div>
 
             <div className="form-group">
