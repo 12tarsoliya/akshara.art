@@ -10,7 +10,7 @@ const Footer = () => {
           <p>Where Emotion Meets Art.</p>
         </div>
         <div className="footer-links">
-          <p>Designed & Engineered by <span className="text-accent">Antigravity Studios</span></p>
+          <p>© {new Date().getFullYear()} Akshara Art. All rights reserved.</p>
           <p style={{ marginTop: '0.5rem', opacity: 0.6, fontSize: '0.8rem' }}>Custom built exclusively for Akshara Tarsoliya</p>
         </div>
       </div>
