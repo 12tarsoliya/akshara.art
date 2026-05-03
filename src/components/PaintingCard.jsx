@@ -9,7 +9,14 @@ const PaintingCard = ({ painting }) => {
   return (
     <div className="painting-card animate-fade-in">
       <div className="card-image-wrapper">
-        <img src={painting.image} alt={painting.title} className="card-image" loading="lazy" />
+        <img 
+          src={painting.image} 
+          alt={painting.title} 
+          className="card-image" 
+          loading="lazy" 
+          draggable="false"
+          style={{ userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none', pointerEvents: 'none' }}
+        />
         <div className="card-overlay glass-panel">
           <button className="add-to-cart-btn" onClick={() => addToCart(painting)}>
             <Plus size={20} /> Add to Cart
