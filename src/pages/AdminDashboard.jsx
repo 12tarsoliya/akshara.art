@@ -12,13 +12,30 @@ const AdminDashboard = () => {
     description: '',
     image: 'https://images.unsplash.com/photo-1578301978693-85fa9c03fa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' // default placeholder
   });
-
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();
-      reader.onloadend = () => {
-        setFormData({ ...formData, image: reader.result });
+      reader.onload = (event) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          const MAX_WIDTH = 800;
+          let scaleSize = 1;
+          if (img.width > MAX_WIDTH) {
+            scaleSize = MAX_WIDTH / img.width;
+          }
+          canvas.width = img.width * scaleSize;
+          canvas.height = img.height * scaleSize;
+          
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          
+          // Compress to JPEG to save space in localStorage
+          const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.7);
+          setFormData({ ...formData, image: compressedDataUrl });
+        };
+        img.src = event.target.result;
       };
       reader.readAsDataURL(file);
     }
@@ -26,9 +43,13 @@ const AdminDashboard = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addPainting(formData);
-    alert('Painting published to the gallery successfully!');
-    setFormData({ title: '', price: '', medium: '', dimensions: '', description: '', image: 'https://images.unsplash.com/photo-1578301978693-85fa9c03fa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' });
+    try {
+      addPainting(formData);
+      alert('Painting published to the gallery successfully!');
+      setFormData({ title: '', price: '', medium: '', dimensions: '', description: '', image: 'https://images.unsplash.com/photo-1578301978693-85fa9c03fa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' });
+    } catch (error) {
+      alert("Error saving painting (Image might still be too large): " + error.message);
+    }
   };
 
   return (
