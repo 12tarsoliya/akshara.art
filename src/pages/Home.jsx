@@ -9,7 +9,7 @@ const Home = () => {
       <section className="hero-section">
         <div className="hero-content animate-fade-in">
           <p className="hero-subtitle">The Akshara Collection</p>
-          <h1 className="hero-title">Where Emotion <br/><span className="text-accent">Meets Canvas</span></h1>
+          <h1 className="hero-title">Where Emotion <br/><span className="text-accent">Meets Art</span></h1>
           <p className="hero-description">
             Discover a curated selection of premium artworks, each piece telling a unique story through masterful strokes and captivating colors.
           </p>

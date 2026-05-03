@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container footer-content">
         <div className="footer-brand">
           <h3>Akshara<span className="text-accent">.</span></h3>
-          <p>Where Emotion Meets Canvas.</p>
+          <p>Where Emotion Meets Art.</p>
         </div>
         <div className="footer-links">
           <p>Designed & Engineered by <span className="text-accent">Antigravity Studios</span></p>
