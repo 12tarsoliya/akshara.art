@@ -27,12 +27,12 @@ const SocialDock = () => {
           <span className="tooltip">WhatsApp</span>
         </a>
         <div className="divider"></div>
-        <a href="https://linkedin.com/in/tarsoliya12" target="_blank" rel="noreferrer" className="dock-item" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/akshara-tarsoliya-b6455030a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" className="dock-item" aria-label="LinkedIn">
           <LinkedinIcon />
           <span className="tooltip">LinkedIn</span>
         </a>
         <div className="divider"></div>
-        <a href="https://instagram.com" target="_blank" rel="noreferrer" className="dock-item" aria-label="Instagram">
+        <a href="https://www.instagram.com/arti.stoul?igsh=MTVqdm0wb3o3NnZqeQ==" target="_blank" rel="noreferrer" className="dock-item" aria-label="Instagram">
           <InstagramIcon />
           <span className="tooltip">Instagram</span>
         </a>

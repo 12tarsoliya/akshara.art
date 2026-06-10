@@ -33,7 +33,7 @@ const CartDrawer = () => {
                   <div className="item-details">
                     <h4 className="item-title">{item.title}</h4>
                     <p className="item-artist">{item.artist}</p>
-                    <p className="item-price">${item.price}</p>
+                    <p className="item-price">₹{item.price}</p>
                   </div>
                   <button className="remove-btn" onClick={() => removeFromCart(item.id)}>
                     <Trash2 size={18} />
@@ -48,12 +48,14 @@ const CartDrawer = () => {
           <div className="cart-footer">
             <div className="cart-total">
               <span>Total</span>
-              <span>${total}</span>
+              <span>₹{total}</span>
             </div>
             <button className="btn-primary checkout-btn flex items-center justify-center gap-2" onClick={() => {
-              alert("Redirecting to 100% Secure Payment Gateway (e.g., Razorpay/Stripe).\n\nYour website does NOT store credit card details. Security is handled entirely by the payment provider (PCI-DSS Compliant) so hackers cannot steal payment info from your site.");
+              const message = `Hello Akshara! I would like to purchase the following artworks:\n\n${cartItems.map(i => `- ${i.title} (₹${i.price})`).join('\n')}\n\nTotal Amount: ₹${total}\n\nPlease share your UPI details to complete the payment.`;
+              const encodedMessage = encodeURIComponent(message);
+              window.open(`https://wa.me/910000000000?text=${encodedMessage}`, '_blank');
             }}>
-              <Lock size={18} /> Proceed to Secure Checkout
+              <Lock size={18} /> Order via WhatsApp (UPI)
             </button>
             <div className="secure-badge">
               <ShieldCheck size={16} className="text-green-500" />

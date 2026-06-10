@@ -5,8 +5,11 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CartDrawer from './components/CartDrawer';
 import SocialDock from './components/SocialDock';
+import FloatingCuratorChat from './components/FloatingCuratorChat';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
+import Curator from './pages/Curator';
+import ArtworkDetail from './pages/ArtworkDetail';
 import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
@@ -38,11 +41,14 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/curator" element={<Curator />} />
+            <Route path="/artwork/:id" element={<ArtworkDetail />} />
             <Route path="/admin" element={<AdminDashboard />} />
           </Routes>
         </main>
         
         <SocialDock />
+        <FloatingCuratorChat />
         <Footer />
       </div>
     </CartProvider>

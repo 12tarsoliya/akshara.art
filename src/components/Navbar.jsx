@@ -23,7 +23,7 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`navbar ${isScrolled || mobileMenuOpen ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <Link to="/" className="brand">
           Akshara Tarsoliya<span className="text-accent">.</span>
@@ -32,7 +32,7 @@ const Navbar = () => {
         <nav className={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>
           <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
           <Link to="/shop" className={location.pathname === '/shop' ? 'active' : ''}>Gallery</Link>
-          <Link to="/admin" className={location.pathname === '/admin' ? 'active' : ''}>Artist Portal</Link>
+          <Link to="/curator" className={location.pathname === '/curator' ? 'active' : ''}>AI Curator</Link>
         </nav>
 
         <div className="nav-actions">
